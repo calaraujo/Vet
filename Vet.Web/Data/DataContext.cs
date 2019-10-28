@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +8,7 @@ using Vet.Web.Data.Entities;
 
 namespace Vet.Web.Data
 {
-    public class DataContext : DbContext
+    public class DataContext : IdentityDbContext<User>
     {
         public DataContext(DbContextOptions<DataContext> options) : base(options)
         {
@@ -24,5 +25,7 @@ namespace Vet.Web.Data
         public DbSet<History> Histories { get; set; }
 
         public DbSet<Agenda> Agendas { get; set; }
+
+        public DbSet<Manager> Managers { get; set; }
     }
 }
