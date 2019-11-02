@@ -19,7 +19,7 @@ namespace Vet.Web.Data.Entities
 
         [Display(Name = "Date*")]
         [Required(ErrorMessage = "The field {0} is mandatory.")]
-        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy HH:mm}", ApplyFormatInEditMode = true)]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         public DateTime Date { get; set; }
 
         public string Remarks { get; set; }
@@ -27,7 +27,7 @@ namespace Vet.Web.Data.Entities
         public Pet Pet { get; set; }
 
         [Display(Name = "Date*")]
-        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy HH:mm}", ApplyFormatInEditMode = true)]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         public DateTime DateLocal => Date.ToLocalTime();
     }
 }

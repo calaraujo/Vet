@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using System.Threading.Tasks;
 using Vet.Web.Data.Entities;
+using Vet.Web.Models;
 
 namespace Vet.Web.Helpers
 {
@@ -15,5 +16,14 @@ namespace Vet.Web.Helpers
         Task AddUserToRoleAsync(User user, string roleName);
 
         Task<bool> IsUserInRoleAsync(User user, string roleName);
+
+        Task<SignInResult> LoginAsync(LoginViewModel model);
+
+        Task LogoutAsync();
+
+        Task<bool> DeleteUserAsync(string email);
+
+        Task<IdentityResult> UpdateUserAsync(User user);
+
     }
 }

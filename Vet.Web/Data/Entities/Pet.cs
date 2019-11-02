@@ -25,7 +25,6 @@ namespace Vet.Web.Data.Entities
 
         [Display(Name = "Born")]
         [Required(ErrorMessage = "The field {0} is mandatory.")]
-        [DataType(DataType.DateTime)]
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         public DateTime Born { get; set; }
 
@@ -41,7 +40,7 @@ namespace Vet.Web.Data.Entities
             : $"https://TDB.azurewebsites.net{ImageUrl.Substring(1)}";
 
         [Display(Name = "Born*")]
-        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy HH:mm}")]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
         public DateTime BornLocal => Born.ToLocalTime();
     }
 }
