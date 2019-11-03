@@ -34,10 +34,9 @@ namespace Vet.Web.Data.Entities
 
         public ICollection<Agenda> Agendas { get; set; }
 
-        //TODO: replace the correct URL for the image
         public string ImageFullPath => string.IsNullOrEmpty(ImageUrl)
             ? null
-            : $"https://TDB.azurewebsites.net{ImageUrl.Substring(1)}";
+            : $"https://cadearaujo.com{ImageUrl.Substring(1)}";
 
         [Display(Name = "Born*")]
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
